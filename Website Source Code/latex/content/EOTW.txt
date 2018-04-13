@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage[landscape, margin=.67in, bottom=1in]{geometry}
+\usepackage{setspace}
+\usepackage{graphicx}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\includegraphics[width=.4\textwidth]{latex/images/OSUlandscape.jpg}
+\hfill
+\includegraphics[width=.18\textwidth]{latex/images/OSUEngineering.jpg}
+
+\centering
+
+\begin{minipage}[c]{1.0\textwidth}
+\vspace{10mm}
+\textbf{
+\centering{
+\Huge Employee of the Week\\
+	}
+}
+
+\end{minipage}
+\vspace{10mm}
+
+\begin{minipage}[c]{1.0\textwidth}
+\centering{
+\LARGE In honor of outstanding performance, we honor\\
+\vspace{5mm}
+\underline{%(name)s} As Employee of the Week\\
+\vspace{5mm}
+on {%(date)s} at {%(time)s}.
+}
+\end{minipage}
+
+\vfill
+
+\centering{
+\includegraphics[width=.2\textwidth]{latex/images/signature.jpg}\\	
+\line(1,0){200}\\
+%(sender)s
+}
+
+\end{document}

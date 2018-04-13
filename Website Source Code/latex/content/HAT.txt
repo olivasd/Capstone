@@ -1,0 +1,48 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage[landscape, margin=.5in, bottom=.5in]{geometry} 
+\usepackage{setspace}
+\usepackage{graphicx}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\includegraphics[width=.15\textwidth]{latex/images/hat1.png}
+\hfill
+\includegraphics[width=.22\textwidth]{latex/images/hat2.jpg}
+
+\centering
+
+\begin{minipage}[c]{1.0\textwidth}
+\vspace{10mm}
+\textbf{
+\centering{
+\Huge THE BEST HAT\\
+	}
+}
+
+\end{minipage}
+\vspace{10mm}
+
+\begin{minipage}[c]{1.0\textwidth}
+\centering{
+\LARGE You are so cool and let me tell you, that hat is awesome.\\
+So you, \underline{%(name)s}, have been awarded\\ 
+the Best Hat Award on {%(date)s} at {%(time)s}.\\
+}
+\end{minipage}
+
+\vspace{15mm}
+
+\centering{
+\includegraphics[width=.2\textwidth]{latex/images/signature.jpg}\\	
+
+\line(1,0){200}\\
+%(sender)s
+}
+
+\includegraphics[width=.15\textwidth]{latex/images/hat3.jpg}
+\hfill
+\includegraphics[width=.22\textwidth]{latex/images/hat4.png}
+
+
+\end{document}

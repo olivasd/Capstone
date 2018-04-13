@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>  <!-- reCAPTCHA -->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">		
+		<script type="text/javascript" src="../static/js/editusr.js"></script>
+    </head>  
+	<header>
+		<nav><ul><li><a href="landing.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+    <body id="bdy" class="bckgrdbdy" background="../static/images/Edit.jpeg">
+        <h1>Edit Profile</h1>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h3>Update First/Last Name</h3>
+			</div>
+			<label for="firstname">First Name</label>
+			<br>
+			<input type="text" id="firstname" name="firstname">
+			<br>
+			<label for="lastname">Last Name</label>
+			<br>
+			<input type="text" id="lastname" name="lastname">
+			<br><br>
+			<button id="btnSubmit">Submit</button>
+		</div>
+		<br>
+			<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h3>Change Signature</h3>
+			</div>
+			<br><br>
+			<a href='updatesignature.html'><button id="btnSignature">Enable signature box</button></a><br>
+		</div>
+		<br>
+		<div class="login-box animated fadeInUp" id="passwordreset">
+			<div class="box-header">
+				<h3>Change Password</h3>
+			</div><br>
+			<p>
+				<input id="password" name="password" type="password" placeholder="Password" onfocus="focusPassword()" onblur="blurPassword()" required />
+				<span style="visibility: hidden" id="passwordmsg">msg</span>
+			</p>
+			<p>
+				<input id="cfpassword" name="cfpassword" type="password" required placeholder="Confirm Password" onblur="blurConfirmPW()"/>
+				<span id="cfpassword_msg" style="visibility: hidden" class="cfpassword">Your passwords do not match</span>
+			</p>
+			<button id="{{userid}}" class="btnResetPwd">RESET Password</button>
+		</div>
+    </body>
+</html>

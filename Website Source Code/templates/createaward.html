@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script type="text/javascript" src="../static/js/createaward.js"></script>
+	</head>
+	<header>
+		<nav><ul><li><a href="landing.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+	<h2>Create Award</h2>
+	<body class="bckgrdbdy" background="../static/images/createaward.jpg" id="bdy" >
+	<div class="award_container">
+		<div> 
+			<img class="image_size left_img" src="../static/images/award_week.png">
+			<img class="image_size center_img" src="../static/images/award_month.png">
+			<img class="image_size right_img" src="../static/images/award_hat.png">
+		</div>
+		<div>
+		   <input class="left_radio" name="award" type="radio" checked="checked" value="1"> <label class="award_radio">Employee of The Week</label>
+		   <input class="center_radio" name="award" type="radio" value="2"> <label class="award_radio">Employee of The Month</label>
+		   <input class="right_radio" name="award" type="radio" value="3"> <label class="award_radio">Best Hat</label>
+		</div>
+		<div class="margin_top" align="center">
+			<input type="text" id="datepicker" placeholder="Date Awarded" readonly="true">
+			<input type="time" id="time_entry">
+		</div>
+		<div class="user_combo" align="center">
+			<select id="user">
+				{{user_dropdown}}
+			</select>
+		</div>
+		<div id="loading-bar-spinner" class="spinner" style="display:none">
+		  <div class="spinner-icon"></div>
+		</div>		
+      </div>
+	  <div align="center">
+		<button class="award_submit" id="btnSubmit">Click to Create and Send Award!!</button>
+	  </div>
+       <script>
+           $(function() {
+               $( "#datepicker" ).datepicker();
+           });
+       </script>
+   </body>
+</html>

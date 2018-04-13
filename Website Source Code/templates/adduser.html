@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="../static/js/adduser.js"></script>
+    </head>
+	<header>
+		<nav><ul><li><a href="adminlanding.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+    <body id="bdy" class="bckgrdbdy" background="../static/images/view.jpg">
+        <h1>Admin</h1>
+		<div class="login-box animated fadeInUp">
+		<div class="box-header">
+			<h3>Add New User</h3>
+		</div>
+			<br><label for="firstname">First Name</label>
+			<br>
+			<input type="text" id="firstname" name="firstname" required>
+			<br>
+			<label for="lastname">Last Name</label>
+			<br>
+			<input type="text" id="lastname" name="lastname" required>
+			<br>
+			<label for="username">Email</label>
+			<br>
+			<input type="text" id="username" name="username" onblur="checkUsername()" required>
+			<br><br>
+			<input type="radio" name="access_level" value="0" checked>  User   
+			<input type="radio" name="access_level" value="1">  Admin<br>
+			<br>
+			<p>Auto-created password will be <br>emailed to created user</p>
+			<br>
+			<span style="visibility: hidden" id="username_msg">Username already exists!</span>
+			<br><button type="submit" id="btnSubmit" disabled>Submit</button>
+		</div>
+    </body>
+</html>

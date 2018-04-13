@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>  <!-- reCAPTCHA -->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="../static/js/secCheck.js"></script>
+    </head>  
+    <body class="bckgrdbdy" background="../static/images/security.jpg">
+		<br><br><br>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h3>Security Questions</h3>
+			</div>
+			<br>
+			<p>Please choose and answer two security questions for use during password recovery</p>
+			<br>
+			<label for="question1">Security Question 1</label>
+			<br>
+			<select id="question1">
+				{{security_questions}}
+			</select>
+			<br>
+			<label for="answer1">Answer 1</label><br>
+			<input type="text" id="answer1" name="answer1">
+			<br><br>
+			<label for="question2">Security Question 2</label>
+			<br>
+			<select id="question2">
+				{{security_questions}}
+			</select>
+			<br>
+			<label for="answer2">Answer 2</label><br>
+			<input type="text" id="answer2" name="answer2">
+			<br><br><button type="submit" id="btnSubmit">Proceed to Signature</button>
+		</div>
+    </body>
+</html>

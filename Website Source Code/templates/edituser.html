@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script type="text/javascript" src="../static/js/admineditusr.js"></script>
+    </head>
+	<header>
+		<nav><ul><li><a href="adminlanding.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+    <body background="../static/images/Edit.jpeg" class="bckgrdbdy">
+        <h1>Edit</h1>
+        <div class="login-box animated fadeInUp" id="userTable">
+			<div class="box-header">
+				<h3>Edit {{type}} Fields</h3>
+			</div>
+			<label for="firstname">First Name</label>
+			<br>
+			<input type="text" id="firstname" name="firstname" placeholder="{{firstname}}">
+			<br>
+			<label for="lastname">Last Name</label>
+			<br>
+			<input type="text" id="lastname" name="lastname" placeholder="{{lastname}}">
+			<br>
+			<label for="username">Email</label><br>
+			<input type="text" id="username" onblur="checkUsername()" name="username" placeholder="{{username}}">
+			<br>
+			<span style="visibility: hidden" id="username_msg">Username already exists!</span>
+			<br>
+			<button id="{{userid}}" class="btnsub" type="submit" value="submit">Submit</button>
+		</div>
+		<br><br>
+		<div class="login-box animated fadeInUp" id="passwordreset">
+			<div class="box-header">
+				<h3>Force Reset Password</h3>
+			</div>
+			<br>
+			<button id="{{userid}}" class="resetpwd" type="submit" value="submit">RESET Password</button>
+		</div>
+    </body>
+</html>

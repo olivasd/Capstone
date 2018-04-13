@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="../static/js/updsignature.js"></script>
+	</head>
+	<header>
+		<nav><ul><li><a href="landing.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+	<body class="bckgrdbdy" background="../static/images/EOTM.jpeg">
+		<div id="titlespace"></div>
+		<div class="login-box signature_width animated fadeInUp">
+			<div class="box-header">
+				<h3>Update Signature</h3>
+			</div>
+			<p>Signature is required to complete registration</p>
+			<canvas id="signature" width="450" height="150" style="border: 1px solid black;"></canvas>
+			<br>
+			<button id="clear-signature">Clear</button>
+			<button id="{{userid}}" class="submit-signature" disabled>Submit</button>
+			<br/>
+		</div>
+	</body>
+</html>

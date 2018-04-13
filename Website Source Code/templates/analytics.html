@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+		<link rel="stylesheet" href="../static/css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	</head>
+	<header>
+		<nav><ul><li><a href="adminlanding.html"><button>Home</button></a></li>
+		<li><a href="logout"><button>Logout</button></a></li></ul></nav>
+	</header>
+	<body class="bckgrdbdy" background="../static/images/business.jpg">
+		<div class="ttl">
+			<h2>Business Analytics</h2>
+		</div>
+		<div class="ct">
+			<div class="thethree">
+			<h4>Awards</h4>
+				<div class="login-box animated fadeInUp" id="btmm">
+					<form action="" method="post">
+						<div class="box-header" align="center">
+							<h3>Total Awards</h3></div>
+						<br> In the last:
+						{{selector}}
+						<button type="submit" name="graph" value="1">Submit</button>
+					</form>
+				</div>
+				<br><br><br>
+				<div class="login-box animated fadeInUp" id="btmm">
+					<form action="" method="post">
+					<div class="box-header" align="center">
+							<h3>Total Awards</h3></div>
+						<br>
+						By Month
+						<button type="submit" name="graph" value="2">Submit</button>
+					</form>
+				</div>
+			</div>
+			<div class="thethree">
+				<h4>Awards By Users</h4>
+				<div class="login-box animated fadeInUp" id="btmm">
+					<form action="" method="post">
+						<div class="box-header" align="center">
+							<h3>Given</h3></div>
+						<br> In the last:
+						{{selector}}
+						<button type="submit" name="graph" value="3">Submit</button>
+					</form>
+				</div>
+				<br><br><br>
+				<div class="login-box animated fadeInUp" id="btmm">
+				<form action="" method="post">
+					<div class="box-header" align="center">
+						<h3>Received</h3></div>
+					<br> In the last:
+					{{selector}}
+					<button type="submit" name="graph" value="4">Submit</button>
+				</form>
+				</div>
+				</div>
+			<div class="thethree">
+			<h4>Awards By Email Domain</h4>
+				<div class="login-box animated fadeInUp" id="btmm">
+				<form action="" method="post">
+					<div class="box-header" align="center">
+						<h3>Given</h3></div>
+					<br> In the last:
+					{{selector}}
+					<button type="submit" name="graph" value="5">Submit</button>
+				</form>
+				</div>
+				<br><br><br>
+				<div class="login-box animated fadeInUp" id="btmm">
+				<form action="" method="post">
+					<div class="box-header" align="center">
+						<h3>Received</h3></div>
+					<br> In the last:
+					{{selector}}
+					<button type="submit" name="graph" value="6">Submit</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

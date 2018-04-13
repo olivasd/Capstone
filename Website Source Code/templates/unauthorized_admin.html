@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>  <!-- reCAPTCHA -->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script type="text/javascript" src="../static/js/validate.js"></script>
+    </head>  
+    <body class="bckgrdbdy" background="../static/images/adminpage.jpg">
+		<div class="login-box animated fadeInUp">
+		<div class="box-header">
+			<h3>Admin Login</h3>
+		</div>
+			<form action="" method="post" onsubmit="checkReCAPTCHA()">
+				<label for="username">Email</label><br>
+				<input type="text" id="username" name="username" required /><br>
+				<label for="password">Password</label><br>
+				<input id="password" name="password" type="password" required />
+				<span style="visibility: hidden" id="passwordmsg">Enter a password of at least 8 characters</span>
+				<div class="g-recaptcha" id="inrec" data-sitekey="6LcsT0MUAAAAAA89e6A7UWnUDv_U71esw3Y7Kjro"></div>
+				<span style="visibility: hidden" id="captchamsg">Please complete reCaptcha to continue</span>
+				<button type="submit" value="submit">Submit</button>
+			</form>
+			<a href="adminresetpassword.html"><p class="small">Forgot your password?</p></a>
+		</div>
+		<div class="unauth-box">Invalid email or password entered!</div>
+    </body>
+</html>

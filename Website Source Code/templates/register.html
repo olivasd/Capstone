@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WIPAwards.com</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>  <!-- reCAPTCHA -->
+        <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">
+		<script type="text/javascript" src="../static/js/validate.js"></script>
+    </head>  
+    <body class="bckgrdbdy" background="../static/images/EOTM.jpeg">
+        <h1>Sign-up for WIPAwards.com!</h1>
+		<div class="login-box animated fadeInUp">
+		<div class="box-header">
+			<h3>Register</h3>
+		</div>
+			<form action="" method="post" onsubmit="validate();">
+				<label for="firstname">First Name</label>
+				<br>
+				<input type="text" id="firstname" name="firstname" required>
+				<br>
+				<label for="lastname">Last Name</label>
+				<br>
+				<input type="text" id="lastname" name="lastname" required>
+				<br>
+				<label for="username">Email</label><br>
+				<input type="text" id="username" onblur="checkUsername()" name="username" required>
+				<span style="visibility: hidden" id="username_msg">Username already exists!</span>
+				<p>
+					<input id="password" name="password" type="password" placeholder="Password" onfocus="focusPassword()" onblur="blurPassword()" required />
+					<span style="visibility: hidden" id="passwordmsg">msg</span>
+				</p>
+				<p>
+					<input id="cfpassword" name="cfpassword" type="password" required placeholder="Confirm Password" onblur="blurConfirmPW()"/>
+					<span id="cfpassword_msg" style="visibility: hidden" class="cfpassword">Your passwords do not match</span>
+				</p>
+				<div class="g-recaptcha" id="inrec" data-sitekey="6LcsT0MUAAAAAA89e6A7UWnUDv_U71esw3Y7Kjro"></div>
+				<span style="visibility: hidden" id="captchamsg">Please complete reCaptcha to continue</span>
+				<button type="submit" value="submit">Sign Me Up!</button>
+			</form>
+		</div>
+    </body>
+</html>
