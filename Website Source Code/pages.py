@@ -3,11 +3,11 @@ import gviz_api
 import MySQLdb
 
 def connect_db():
-  db=MySQLdb.connect(host="wipawardsdb.c2iugyb7o9rr.us-west-2.rds.amazonaws.com", 
+  db=MySQLdb.connect(host="aafd5d0dbwwprl.cz0r3iyamhjr.us-east-2.rds.amazonaws.com", 
           port=3306, 
           user="wipuser", 
           passwd="PolloLoco007!", 
-          db="wipawardsdb")
+          db="ebdb")
   return db
 
 def test(months):

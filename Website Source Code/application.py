@@ -49,10 +49,10 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 
 # db info
-DB_HOST = 'wipawardsdb.c2iugyb7o9rr.us-west-2.rds.amazonaws.com'
-DB_USER = os.environ['RDS_USERNAME']
-DB_PASSWORD = os.environ['RDS_PASSWORD']
-DB_NAME = 'wipawardsdb'
+DB_HOST = "aafd5d0dbwwprl.cz0r3iyamhjr.us-east-2.rds.amazonaws.com"
+DB_USER = 'wipuser'
+DB_PASSWORD = 'PolloLoco007!'
+DB_NAME = 'ebdb'
 
 #JWT encode
 encoder = 'wipencoded'
@@ -86,7 +86,7 @@ def cookie_header():
 	
 	cookie = SimpleCookie()
 	cookie["session"] = jwt.encode(data, encoder, algorithm='HS256')
-	cookie["session"]["domain"] = ".wip-awards.us-west-2.elasticbeanstalk.com"
+	cookie["session"]["domain"] = ".wip-awards.us-east-2.elasticbeanstalk.com"
 	cookie["session"]["path"] = "/"
 	cookie["session"]["expires"] = expiration.strftime("%a, %d-%b-%Y %H:%M:%S PST")
 	return ('Set-Cookie', cookie['session'].OutputString())
@@ -98,7 +98,7 @@ def log_out_user(environ, start_response):
 
 		cookie = SimpleCookie()
 		cookie["session"] = 'X'
-		cookie["session"]["domain"] = ".wip-awards.us-west-2.elasticbeanstalk.com"
+		cookie["session"]["domain"] = ".wip-awards.us-east-2.elasticbeanstalk.com"
 		cookie["session"]["path"] = "/"
 		cookie["session"]["expires"] = expiration.strftime("%a, %d-%b-%Y %H:%M:%S PST")
 		cookie_header = ('Set-Cookie', cookie['session'].OutputString())
@@ -238,7 +238,11 @@ def mysql_execute_query(start_response, environ, sp_name, args):
 	con = None
 	result = None
 	try:
-		con = MySQLdb.connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)  
+		con = MySQLdb.connect(host="aafd5d0dbwwprl.cz0r3iyamhjr.us-east-2.rds.amazonaws.com", 
+				  port=3306, 
+				  user="wipuser", 
+				  passwd="PolloLoco007!", 
+				  db="ebdb")
 		cursor = con.cursor()
 		cursor.callproc(sp_name, args)
 		if int(cursor.rowcount) == 0:
@@ -257,15 +261,15 @@ def mysql_execute_query(start_response, environ, sp_name, args):
 
 def send_account_created_email(greeting, recipient, generated_password):
 	#source: http://naelshiab.com/tutorial-send-email-python/
-	fromaddr = 'noreply.wipawards@gmail.com'
+	fromaddr = 'capstoneadm1n@gmail.com'
 	 
 	msg = MIMEMultipart()
 	 
-	msg['From'] = 'noreply.wipawards.com'
+	msg['From'] = 'wip-awards.us-east-2.elasticbeanstalk.com'
 	msg['To'] = recipient
 	msg['Subject'] = greeting
 
-	body = "http://wip-awards.us-west-2.elasticbeanstalk.com/\n\n"
+	body = "http://wip-awards.us-east-2.elasticbeanstalk.com\n\n"
 	body += "Username: " + recipient + "\n"
 	body += "Password: " + generated_password + "\n"
 
@@ -273,18 +277,18 @@ def send_account_created_email(greeting, recipient, generated_password):
 		 
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
-	server.login(fromaddr, 'PolloLoco007!')
+	server.login(fromaddr, 'PolloLoco008!')
 	text = msg.as_string()
 	server.sendmail(fromaddr, recipient, text)
 	server.quit()
 	
 def send_latex_email(recipient, award_file_path):
 	#source: http://naelshiab.com/tutorial-send-email-python/
-	fromaddr = 'noreply.wipawards@gmail.com'
+	fromaddr = 'capstoneadm1n@gmail.com'
 	 
 	msg = MIMEMultipart()
 	 
-	msg['From'] = 'noreply.wipawards.com'
+	msg['From'] = 'wip-awards.us-east-2.elasticbeanstalk.com/'
 	msg['To'] = recipient
 	msg['Subject'] = 'A Special Award for You'
 
@@ -302,7 +306,7 @@ def send_latex_email(recipient, award_file_path):
 	 
 	server = smtplib.SMTP('smtp.gmail.com', 587)
 	server.starttls()
-	server.login(fromaddr, 'PolloLoco007!')
+	server.login(fromaddr, 'PolloLoco008!')
 	text = msg.as_string()
 	server.sendmail(fromaddr, recipient, text)
 	server.quit()
@@ -312,7 +316,7 @@ def send_latex_email(recipient, award_file_path):
 #reference : https://stackoverflow.com/questions/28657935/new-google-recaptcha-with-django-recaptcha
 def reCAPTCHA_checker(key):
 	url = 'https://www.google.com/recaptcha/api/siteverify'
-	values = {'secret' : '6LcsT0MUAAAAAC741cXYH5z_MqCyVGvxgdp6faY7','response' : key}
+	values = {'secret' : '6Lc2oVMUAAAAAIlP5D6zl9uWMDis_8IE6TZP7jRC','response' : key}
 
 	rem = urllib.urlencode(values)
 	req = urllib2.Request(url, rem)

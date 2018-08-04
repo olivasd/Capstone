@@ -1,5 +1,18 @@
 --Table Creates MySql
 
+CREATE TABLE `tbl_User` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) NOT NULL,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `password` varchar(100) NOT NULL,
+  `signature_data` longtext,
+  `isAdmin` tinyint(1) NOT NULL,
+  `Created_Date` datetime(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=229 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `tbl_Award` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type_id` int(11) NOT NULL,
@@ -24,19 +37,6 @@ CREATE TABLE `tbl_Security_Questions` (
   `question` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
-CREATE TABLE `tbl_User` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(255) NOT NULL,
-  `firstname` varchar(50) DEFAULT NULL,
-  `lastname` varchar(50) DEFAULT NULL,
-  `password` varchar(100) NOT NULL,
-  `signature_data` longtext,
-  `isAdmin` tinyint(1) NOT NULL,
-  `Created_Date` datetime(1) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=229 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tbl_User_Security` (
   `userid` int(11) NOT NULL,
